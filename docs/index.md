@@ -3,21 +3,21 @@ layout: home
 
 hero:
   name: "Davonte Rules"
-  text: "精简实用的分流规则"
-  tagline: 为回国、留学场景维护 · 每日自动构建 · Surge / Quantumult X / Loon / Clash 通用
+  text: "Lean, practical routing rules"
+  tagline: Built for China-return & study-abroad scenarios · Rebuilt daily · Works with Surge / Quantumult X / Loon / Clash
   actions:
     - theme: brand
-      text: 快速开始
+      text: Quick Start
       link: /quickstart
     - theme: alt
-      text: GitHub 仓库
+      text: GitHub Repo
       link: https://github.com/dmulle12/rules
 
 features:
-  - title: 按需订阅，别贪多
-    details: 广告拦截、回国流媒体、GeoIP 库……每个规则集各司其职，只订阅你真正需要的。
-  - title: 一源多端
-    details: 同一份规则源，自动生成 Surge、Quantumult X、Loon、Clash、sing-box 五种格式。
-  - title: 每日自动构建
-    details: GitHub Actions 每天从上游同步重建，域名规则与 IP 库永远新鲜。
+  - title: Subscribe only to what you need
+    details: Ad blocking, China streaming, GeoIP database… each rule set does one job. Take only what you actually use.
+  - title: One source, five formats
+    details: A single rule source automatically generates Surge, Quantumult X, Loon, Clash and sing-box formats.
+  - title: Rebuilt daily
+    details: GitHub Actions re-syncs from upstream every day, so domain rules and IP data stay fresh.
 ---
