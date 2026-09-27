@@ -1,0 +1,1 @@
+import{_ as i,o as s,c as e,a0 as t}from"./chunks/framework.DqMqoJl9.js";const u=JSON.parse('{"title":"GeoIP Database","description":"","frontmatter":{},"headers":[],"relativePath":"geoip.md","filePath":"geoip.md"}'),l={name:"geoip.md"};function n(p,a,o,d,h,r){return s(),e("div",null,[...a[0]||(a[0]=[t("",10)])])}const g=i(l,[["render",n]]);export{u as __pageData,g as default};

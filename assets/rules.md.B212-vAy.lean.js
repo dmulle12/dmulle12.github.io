@@ -1,0 +1,1 @@
+import{_ as r,o as a,c as l,a0 as t}from"./chunks/framework.DqMqoJl9.js";const m=JSON.parse('{"title":"Rule Sets","description":"","frontmatter":{},"headers":[],"relativePath":"rules.md","filePath":"rules.md"}'),i={name:"rules.md"};function s(o,e,n,c,u,d){return a(),l("div",null,[...e[0]||(e[0]=[t("",23)])])}const f=r(i,[["render",s]]);export{m as __pageData,f as default};
