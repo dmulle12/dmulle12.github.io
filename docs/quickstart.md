@@ -1,9 +1,9 @@
-# 快速开始
+# Quick Start
 
-下面示例里的 **回国** 请换成你自己的策略组/节点组名称。
+In the examples below, replace **China** with your own policy / proxy group name.
 
-::: tip 按需订阅
-规则不是越多越好。先订阅 `reject`（去广告）和 `streaming-cn`（回国），不够再加。
+::: tip Subscribe on demand
+More rules ≠ better. Start with `reject` (ad blocking) and `streaming-cn` (China streaming), and add more only if you need them.
 :::
 
 ::: code-group
@@ -14,8 +14,8 @@ geoip-maxmind-url = https://github.com/dmulle12/rules/raw/rel/chnroutes.mmdb
 
 [Rule]
 RULE-SET,https://github.com/dmulle12/rules/raw/rel/reject.list,REJECT
-RULE-SET,https://github.com/dmulle12/rules/raw/rel/streaming-cn.list,回国
-GEOIP,CN,回国
+RULE-SET,https://github.com/dmulle12/rules/raw/rel/streaming-cn.list,China
+GEOIP,CN,China
 FINAL,DIRECT
 ```
 
@@ -25,10 +25,10 @@ geoip-url = https://github.com/dmulle12/rules/raw/rel/chnroutes.mmdb
 
 [filter_remote]
 https://github.com/dmulle12/rules/raw/rel/reject.quanx, tag=Reject, update-interval=86400, enabled=true
-https://github.com/dmulle12/rules/raw/rel/streaming-cn.quanx, tag=StreamingCN, force-policy=回国, update-interval=86400, enabled=true
+https://github.com/dmulle12/rules/raw/rel/streaming-cn.quanx, tag=StreamingCN, force-policy=China, update-interval=86400, enabled=true
 
 [filter_local]
-geoip,cn,回国
+geoip,cn,China
 ```
 
 ```ini [Loon]
@@ -37,10 +37,10 @@ geoip-url = https://github.com/dmulle12/rules/raw/rel/chnroutes.mmdb
 
 [Remote Rule]
 https://github.com/dmulle12/rules/raw/rel/reject.list, policy=REJECT, tag=Reject, enabled=true
-https://github.com/dmulle12/rules/raw/rel/streaming-cn.list, policy=回国, tag=StreamingCN, enabled=true
+https://github.com/dmulle12/rules/raw/rel/streaming-cn.list, policy=China, tag=StreamingCN, enabled=true
 
 [Rule]
-GEOIP,CN,回国
+GEOIP,CN,China
 FINAL,DIRECT
 ```
 
@@ -61,16 +61,16 @@ rule-providers:
 
 rules:
   - RULE-SET,reject,REJECT
-  - RULE-SET,streaming-cn,回国
-  - GEOIP,CN,回国
+  - RULE-SET,streaming-cn,China
+  - GEOIP,CN,China
   - MATCH,DIRECT
 ```
 
 :::
 
-## 说明
+## Notes
 
-- `reject`：广告域名拦截，各地通用。
-- `streaming-cn`：哔哩哔哩、抖音、酷狗等需要大陆 IP 的流媒体，走回国节点。
-- `GEOIP,CN`：IP 维度的兜底。万一某个 App 直连 IP、不走域名，这条能把它抓住送进回国节点（需要先配置上面的 GeoIP 库）。
-- 更多规则集见[规则列表](/rules)。
+- `reject`: ad and tracker domain blocking, works everywhere.
+- `streaming-cn`: Bilibili, Douyin, Kugou and other services that require a mainland China IP — route them via your China policy.
+- `GEOIP,CN`: IP-level fallback. If an app connects directly to an IP without a domain involved, this catches it and sends it to your China policy (requires the GeoIP database configured above).
+- See [Rule Sets](/rules) for everything available.
